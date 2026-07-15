@@ -1,9 +1,12 @@
+import avatar from '../assets/netflix/avatar.png'
+import netflixLogo from '../assets/netflix/netflix-logo.png'
+
 function Header() {
   return (
     <header className="header">
       <div className="brand-row">
         <a href="#top" aria-label="Netflix homepage">
-          <img className="logo" src="netflix-img/netflix-logo.png" alt="Netflix" />
+          <img className="logo" src={netflixLogo} alt="Netflix" />
         </a>
         <span className="header-line" aria-hidden="true"></span>
         <p className="date">Friday July 8th</p>
@@ -16,7 +19,7 @@ function Header() {
             <i className="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
-        <img className="avatar" src="netflix-img/avatar.png" alt="User avatar" />
+        <img className="avatar" src={avatar} alt="User avatar" />
       </div>
     </header>
   )

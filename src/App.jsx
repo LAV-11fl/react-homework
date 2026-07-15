@@ -7,7 +7,7 @@ import Rating from './components/Rating'
 
 function App() {
   return (
-    <main className="page">
+    <main className="page" id="top">
       {/* Основні блоки Netflix-сторінки */}
       <Header />
       <section className="content">
