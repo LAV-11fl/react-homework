@@ -123,6 +123,19 @@ button, input {
   object-fit: cover;
 }
 
+.login-button {
+  padding: 12px 20px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: #fff;
+  color: #111;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;

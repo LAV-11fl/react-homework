@@ -1,14 +1,15 @@
+import PropTypes from 'prop-types'
 import poster1 from '../assets/netflix/poster-1.png'
 import poster2 from '../assets/netflix/poster-2.png'
 import poster3 from '../assets/netflix/poster-3.png'
 import poster4 from '../assets/netflix/poster-4.png'
 import poster5 from '../assets/netflix/poster-5.png'
 
-function PopularSlider() {
+function PopularSlider({ title = 'POPULAR THIS WEEK' }) {
   return (
     <section className="popular" id="popular">
       <div className="popular-head">
-        <h2>POPULAR THIS WEEK</h2>
+        <h2>{title}</h2>
         <div className="arrows">
           <button className="arrow" type="button" aria-label="Previous poster">
             <i className="fa-solid fa-chevron-left"></i>
@@ -27,6 +28,10 @@ function PopularSlider() {
       </div>
     </section>
   )
+}
+
+PopularSlider.propTypes = {
+  title: PropTypes.string,
 }
 
 export default PopularSlider

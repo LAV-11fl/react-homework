@@ -8,15 +8,22 @@ import Rating from './components/Rating'
 function App() {
   return (
     <main className="page" id="top">
-      {/* Основні блоки Netflix-сторінки */}
-      <Header />
+      {/* Дані передаємо до компонентів через props */}
+      <Header date="Friday July 8th" isLoggedIn={true} />
       <section className="content">
-        <MovieInfo />
-        <Rating />
+        <MovieInfo
+          title="Stranger Things"
+          year={2019}
+          director="Shawn Levy"
+          seasons={3}
+          episodes={5}
+          description="In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits."
+        />
+        <Rating value={3} />
         <ActionButtons />
       </section>
-      <PopularSlider />
-      <AgeRestriction />
+      <PopularSlider title="POPULAR THIS WEEK" />
+      <AgeRestriction age={16} />
     </main>
   )
 }
