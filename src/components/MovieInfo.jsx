@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { Fragment } from 'react'
 
 function MovieInfo({
   title = 'Stranger Things',
@@ -6,11 +7,19 @@ function MovieInfo({
   director = 'Shawn Levy',
   seasons = 3,
   episodes = 5,
+  genres = [],
   description = 'No description',
 }) {
   return (
     <>
-      <p className="genres">Drama <span></span> Thriller <span></span> Supernatural</p>
+      <p className="genres">
+        {genres.map((genre, index) => (
+          <Fragment key={genre}>
+            {genre}
+            {index < genres.length - 1 && <span></span>}
+          </Fragment>
+        ))}
+      </p>
       <h1>{title}</h1>
       <p className="details">
         <b>{year}</b> <span></span> <b>DIRECTOR:</b> {director} <span></span>{' '}
@@ -27,6 +36,7 @@ MovieInfo.propTypes = {
   director: PropTypes.string,
   seasons: PropTypes.number,
   episodes: PropTypes.number,
+  genres: PropTypes.arrayOf(PropTypes.string),
   description: PropTypes.string,
 }
 

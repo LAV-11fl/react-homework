@@ -17,6 +17,7 @@ function App() {
           director="Shawn Levy"
           seasons={3}
           episodes={5}
+          genres={['Drama', 'Thriller', 'Supernatural']}
           description="In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits."
         />
         <Rating value={3} />
