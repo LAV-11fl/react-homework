@@ -1,0 +1,32 @@
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f4f6f8;
+  color: #212529;
+}
+
+.pricing-page {
+  min-height: 100vh;
+}
+
+.pricing-form {
+  border-radius: 8px;
+}
+
+.pricing-form .form-label {
+  font-weight: 600;
+}
+
+.card-header {
+  background: #eef2f6;
+}
+
+.card li + li {
+  margin-top: 8px;
+}
+
+.empty-message {
+  padding: 48px 16px;
+  border: 1px dashed #adb5bd;
+  background: #fff;
+}
