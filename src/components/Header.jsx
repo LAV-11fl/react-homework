@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import avatar from '../assets/netflix/avatar.png'
 import netflixLogo from '../assets/netflix/netflix-logo.png'
+import Search from './Search'
 
 function Header({ date = 'Friday July 8th', isLoggedIn = false }) {
   return (
@@ -15,13 +16,8 @@ function Header({ date = 'Friday July 8th', isLoggedIn = false }) {
       <div className="header-actions">
         {isLoggedIn ? (
           <>
-            <form className="search-form" action="https://www.google.com/search" target="_blank">
-              <label className="visually-hidden" htmlFor="movie-search">Search</label>
-              <input id="movie-search" name="q" type="search" defaultValue="netflix stranger things" />
-              <button className="search-button" type="submit" aria-label="Search">
-                <i className="fa-solid fa-magnifying-glass"></i>
-              </button>
-            </form>
+            <Search />
+
             <img className="avatar" src={avatar} alt="User avatar" />
           </>
         ) : (
