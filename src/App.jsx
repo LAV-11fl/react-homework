@@ -3,6 +3,7 @@ import AgeRestriction from './components/AgeRestriction'
 import Header from './components/Header'
 import MovieInfo from './components/MovieInfo'
 import PopularSlider from './components/PopularSlider'
+import RangeTracker from './components/RangeTracker'
 import Rating from './components/Rating'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         />
         <Rating value={3} />
         <ActionButtons />
+        <RangeTracker />
       </section>
       <PopularSlider title="POPULAR THIS WEEK" />
       <AgeRestriction age={16} />

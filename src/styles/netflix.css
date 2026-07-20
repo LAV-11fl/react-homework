@@ -452,3 +452,52 @@ h1 {
   }
 }
 
+
+/* useRef practice */
+.range-practice {
+  width: min(100%, 520px);
+  margin-top: 44px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,.45);
+  background: rgba(15,18,25,.72);
+}
+
+.range-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.range-heading h2,
+.range-heading p {
+  margin: 0;
+}
+
+.range-heading h2 {
+  font-size: 18px;
+}
+
+.range-heading p {
+  color: #c8c8c8;
+  font-size: 14px;
+  text-align: right;
+}
+
+.form-range {
+  width: 100%;
+  accent-color: #d40d1f;
+}
+
+@media (max-width: 560px) {
+  .range-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .range-heading p {
+    text-align: left;
+  }
+}
