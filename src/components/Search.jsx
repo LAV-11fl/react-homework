@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 function Search() {
   const [isOpen, setIsOpen] = useState(false)
@@ -7,6 +7,25 @@ function Search() {
   function toggleSearch() {
     setIsOpen((currentValue) => !currentValue)
   }
+
+  useEffect(() => {
+    if (!isOpen) {
+      return undefined
+    }
+
+    const searchInput = document.getElementById('movie-search')
+    searchInput?.focus()
+
+    function closeSearch(event) {
+      if (event.key === 'Escape') {
+        setIsOpen(false)
+      }
+    }
+
+    document.addEventListener('keydown', closeSearch)
+
+    return () => document.removeEventListener('keydown', closeSearch)
+  }, [isOpen])
 
   return (
     <div className={`search-form ${isOpen ? 'is-open' : ''}`}>
@@ -19,7 +38,6 @@ function Search() {
             value={searchText}
             onChange={(event) => setSearchText(event.target.value)}
             placeholder="Search a movie"
-            autoFocus
           />
         </>
       )}
