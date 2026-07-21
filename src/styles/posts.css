@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  background: #f5f7fa;
+  color: #17202a;
+  font-family: Arial, sans-serif;
+}
+
+.posts-page {
+  min-height: 100vh;
+}
+
+.posts-header {
+  max-width: 720px;
+}
+
+.post-card {
+  border: 1px solid #dce1e6;
+  border-radius: 6px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(23,32,42,.1);
+}
+
+.post-number {
+  color: #0d6efd;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.post-card .card-title {
+  text-transform: capitalize;
+}

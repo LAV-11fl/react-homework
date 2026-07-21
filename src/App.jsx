@@ -1,12 +1,7 @@
-import Store from './components/Store'
-import CartProvider from './context/CartProvider'
+import PostsPage from './components/PostsPage'
 
 function App() {
-  return (
-    <CartProvider>
-      <Store />
-    </CartProvider>
-  )
+  return <PostsPage />
 }
 
 export default App
