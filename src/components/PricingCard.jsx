@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-function PricingCard({ plan, onDelete }) {
+function PricingCard({ plan, onDelete, showDelete = true }) {
   return (
     <article className="card h-100 shadow-sm">
       <div className="card-header py-3 text-center">
@@ -16,9 +16,11 @@ function PricingCard({ plan, onDelete }) {
           <li>{plan.emailSupport ? 'Email support' : 'No email support'}</li>
           <li>{plan.helpCenter ? 'Help center access' : 'No help center access'}</li>
         </ul>
-        <button className="btn btn-outline-danger mt-auto" type="button" onClick={() => onDelete(plan.id)}>
-          Delete plan
-        </button>
+        {showDelete && (
+          <button className="btn btn-outline-danger mt-auto" type="button" onClick={() => onDelete(plan.id)}>
+            Delete plan
+          </button>
+        )}
       </div>
     </article>
   )
@@ -34,7 +36,8 @@ PricingCard.propTypes = {
     emailSupport: PropTypes.bool.isRequired,
     helpCenter: PropTypes.bool.isRequired,
   }).isRequired,
-  onDelete: PropTypes.func.isRequired,
+  onDelete: PropTypes.func,
+  showDelete: PropTypes.bool,
 }
 
 export default PricingCard

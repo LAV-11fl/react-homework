@@ -1,23 +1,27 @@
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 import avatar from '../assets/netflix/avatar.png'
 import netflixLogo from '../assets/netflix/netflix-logo.png'
 import Search from './Search'
 
-function Header({ date = 'Friday July 8th', isLoggedIn = false }) {
+function Header({ isLoggedIn = false }) {
   return (
     <header className="header">
       <div className="brand-row">
-        <a href="#top" aria-label="Netflix homepage">
+        <Link to="/" aria-label="Netflix homepage">
           <img className="logo" src={netflixLogo} alt="Netflix" />
-        </a>
-        <span className="header-line" aria-hidden="true"></span>
-        <p className="date">{date}</p>
+        </Link>
+        <nav className="main-nav" aria-label="Main navigation">
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/price">Price</Link>
+          <Link to="/contact">Contact</Link>
+        </nav>
       </div>
       <div className="header-actions">
         {isLoggedIn ? (
           <>
             <Search />
-
             <img className="avatar" src={avatar} alt="User avatar" />
           </>
         ) : (
@@ -31,7 +35,6 @@ function Header({ date = 'Friday July 8th', isLoggedIn = false }) {
 }
 
 Header.propTypes = {
-  date: PropTypes.string,
   isLoggedIn: PropTypes.bool,
 }
 
