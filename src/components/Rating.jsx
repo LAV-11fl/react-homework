@@ -1,41 +1,34 @@
+import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
+import { useState } from 'react'
 
-function Rating({ value = 1 }) {
-  let stars
+function Rating({ value = 0 }) {
+  const [rating, setRating] = useState(value)
 
-  if (value === 5) {
-    stars = (
-      <>
-        <i className="fa-solid fa-star filled"></i>
-        <i className="fa-solid fa-star filled"></i>
-        <i className="fa-solid fa-star filled"></i>
-        <i className="fa-solid fa-star filled"></i>
-        <i className="fa-solid fa-star filled"></i>
-      </>
-    )
-  } else if (value === 3) {
-    stars = (
-      <>
-        <i className="fa-solid fa-star filled"></i>
-        <i className="fa-solid fa-star filled"></i>
-        <i className="fa-solid fa-star filled"></i>
-        <i className="fa-regular fa-star empty"></i>
-        <i className="fa-regular fa-star empty"></i>
-      </>
-    )
-  } else {
-    stars = (
-      <>
-        <i className="fa-solid fa-star filled"></i>
-        <i className="fa-regular fa-star empty"></i>
-        <i className="fa-regular fa-star empty"></i>
-        <i className="fa-regular fa-star empty"></i>
-        <i className="fa-regular fa-star empty"></i>
-      </>
-    )
+  function selectRating(selectedValue) {
+    setRating((currentRating) => currentRating === selectedValue ? 0 : selectedValue)
   }
 
-  return <div className="stars" aria-label={`Rating: ${value} of 5`}>{stars}</div>
+  return (
+    <div className="stars" aria-label={`Rating: ${rating} of 5`}>
+      {[1, 2, 3, 4, 5].map((star) => (
+        <button
+          className="star-button"
+          type="button"
+          key={star}
+          aria-label={`Set rating ${star} of 5`}
+          onClick={() => selectRating(star)}
+        >
+          <FontAwesomeIcon
+            icon={star <= rating ? faStar : regularStar}
+            className={star <= rating ? 'filled' : 'empty'}
+          />
+        </button>
+      ))}
+    </div>
+  )
 }
 
 Rating.propTypes = {

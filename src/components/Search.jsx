@@ -1,3 +1,5 @@
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
 
 function Search() {
@@ -48,7 +50,7 @@ function Search() {
         aria-expanded={isOpen}
         onClick={toggleSearch}
       >
-        <i className="fa-solid fa-magnifying-glass"></i>
+        <FontAwesomeIcon icon={faMagnifyingGlass} />
       </button>
       {isOpen && searchText.trim().length >= 4 && (
         <p className="search-result">You search: {searchText}</p>

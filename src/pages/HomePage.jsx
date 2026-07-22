@@ -17,7 +17,7 @@ function HomePage() {
           genres={['Drama', 'Thriller', 'Supernatural']}
           description="In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits."
         />
-        <Rating value={3} />
+        <Rating />
         <ActionButtons />
       </section>
       <PopularSlider title="POPULAR THIS WEEK" />
